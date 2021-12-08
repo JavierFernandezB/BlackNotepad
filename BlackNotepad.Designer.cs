@@ -1,6 +1,6 @@
 ﻿namespace BlackNotepad
 {
-    partial class Form1
+    partial class BlackNotepad
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.NotepadTitle = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MaximizeButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             this.NotepadTitle.BackColor = System.Drawing.SystemColors.Desktop;
             this.NotepadTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NotepadTitle.Image = ((System.Drawing.Image)(resources.GetObject("NotepadTitle.Image")));
+            this.NotepadTitle.Image = global::BlackNotepad.Properties.Resources.Gakuseisean_Radium_Notepad_15;
             this.NotepadTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NotepadTitle.Location = new System.Drawing.Point(3, 0);
             this.NotepadTitle.Name = "NotepadTitle";
@@ -135,7 +135,7 @@
             this.openToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -144,7 +144,7 @@
             this.saveToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -154,14 +154,14 @@
             this.toolStripSeparator1.Enabled = false;
             this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 22);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(180, 22);
             this.toolStripSeparator1.Text = "─────────────────";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -176,7 +176,8 @@
             // 
             this.formatToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wordWrapToolStripMenuItem});
+            this.wordWrapToolStripMenuItem,
+            this.fontToolStripMenuItem});
             this.formatToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
             this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 29);
@@ -271,6 +272,15 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.BackColor = System.Drawing.SystemColors.Desktop;
+            this.fontToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +322,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
     }
 }
 

@@ -1,16 +1,28 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BlackNotepad
 {
-    public partial class Form1 : Form
+    public partial class BlackNotepad : Form
     {
-        public Form1()
+        readonly Font BoldAndItalic = new Font(Control.DefaultFont, FontStyle.Bold | FontStyle.Italic);
+        readonly Font Bold = new Font(Control.DefaultFont, FontStyle.Bold);
+        readonly Font Italic = new Font(Control.DefaultFont, FontStyle.Italic);
+        readonly Font Normal = new Font(Control.DefaultFont, FontStyle.Regular);
+
+        public BlackNotepad()
         {
+           
             InitializeComponent();
             menuStrip1.Renderer = new MyRender();
-            Icon = Properties.Resources.Gakuseisean_Radium_Notepad;
+            Icon = Properties.Resources.final;
             string[] args = Environment.GetCommandLineArgs();
+            if (args.Length >= 2) 
+            {
+                string result=FileHandler.OpenFileText(args[1]);
+                InputText.Text = result;
+            }
             
         }
 
@@ -102,6 +114,12 @@ namespace BlackNotepad
                 InputText.WordWrap = true;
                 wordWrapToolStripMenuItem.Checked = true;
             }
+        }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontForm f = new FontForm();
+            f.ShowDialog();
         }
     }
 }

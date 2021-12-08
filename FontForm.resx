@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="NotepadTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAXNJREFUOE/Nk89LwmAYx/d/BV4LOvUfhHTo0KUISurQzaiDBR4LDxJldYjCDgVC
-        NEiDfixy6mzt1bnl1KWWRrcnn8f3HenqGPTAlz3s3efD+z7bpP9Z1ksVykyHopaDZ8YoTsMFvuyvVHIH
-        dINBtqCBVXUoZqMJbqdLab934K378btgP7bmwfXupwcOB9c4MljbG4skKFYbJKm4LdqBCG5fyDkyWOtL
-        kyQQkoJd+zEoe3LbfkloegyyqkpzuC/boFoO3JZs6tOGBbLG4KzAqFecV79gIRgAWb4AnH6uVOlDuumB
-        yQeNgv2VVfdLlqdG4OQoQQIMwvjwad6gCAH2l2aNJBztV3gmAPGtCA0KB4bnFfCBUqTr4V2eehSIcFyS
-        oqFRiK7OkcBttkgidoAQBgWYFHO8cLz3GlfGITw/QdvHjwaDgxRwogdidm9UONZM/xD3IkGIb85C5jrj
-        CTDfj3CuqJBWHv3wcAkYj4H/AL/9VyVJX+T18JG5hCVrAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
