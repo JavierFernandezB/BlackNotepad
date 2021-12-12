@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("BlackNotepad")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Is like notepad but black version")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BlackNotepad .inc")]
 [assembly: AssemblyProduct("BlackNotepad")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

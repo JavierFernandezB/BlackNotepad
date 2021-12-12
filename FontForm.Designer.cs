@@ -31,102 +31,81 @@
             this.listBoxFontFamily = new System.Windows.Forms.ListBox();
             this.listBoxFontStyle = new System.Windows.Forms.ListBox();
             this.listBoxFontSize = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextBoxFontFamily = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TextBoxFontSize = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TextExample = new System.Windows.Forms.Label();
+            this.OkeyButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxFontFamily
             // 
+            this.listBoxFontFamily.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBoxFontFamily.FormattingEnabled = true;
-            this.listBoxFontFamily.Location = new System.Drawing.Point(46, 111);
+            this.listBoxFontFamily.Location = new System.Drawing.Point(12, 111);
             this.listBoxFontFamily.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.listBoxFontFamily.Name = "listBoxFontFamily";
-            this.listBoxFontFamily.Size = new System.Drawing.Size(120, 95);
+            this.listBoxFontFamily.Size = new System.Drawing.Size(139, 125);
             this.listBoxFontFamily.TabIndex = 0;
+            this.listBoxFontFamily.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxFontFamily_DrawItem);
+            this.listBoxFontFamily.SelectedValueChanged += new System.EventHandler(this.listBoxFontFamily_SelectedValueChanged);
             // 
             // listBoxFontStyle
             // 
+            this.listBoxFontStyle.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBoxFontStyle.FormattingEnabled = true;
-            this.listBoxFontStyle.Location = new System.Drawing.Point(188, 111);
+            this.listBoxFontStyle.Location = new System.Drawing.Point(177, 115);
             this.listBoxFontStyle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.listBoxFontStyle.Name = "listBoxFontStyle";
-            this.listBoxFontStyle.Size = new System.Drawing.Size(120, 95);
+            this.listBoxFontStyle.Size = new System.Drawing.Size(129, 121);
             this.listBoxFontStyle.TabIndex = 1;
+            this.listBoxFontStyle.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxFontStyle_DrawItem);
+            this.listBoxFontStyle.SelectedIndexChanged += new System.EventHandler(this.listBoxFontStyle_SelectedIndexChanged);
             // 
             // listBoxFontSize
             // 
             this.listBoxFontSize.FormattingEnabled = true;
-            this.listBoxFontSize.Location = new System.Drawing.Point(338, 111);
+            this.listBoxFontSize.Location = new System.Drawing.Point(338, 115);
             this.listBoxFontSize.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.listBoxFontSize.Name = "listBoxFontSize";
-            this.listBoxFontSize.Size = new System.Drawing.Size(50, 95);
+            this.listBoxFontSize.Size = new System.Drawing.Size(60, 95);
             this.listBoxFontSize.TabIndex = 2;
+            this.listBoxFontSize.SelectedValueChanged += new System.EventHandler(this.listBoxFontSize_SelectedValueChanged);
             // 
-            // textBox1
+            // TextBoxFontFamily
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 4;
+            this.TextBoxFontFamily.Location = new System.Drawing.Point(12, 91);
+            this.TextBoxFontFamily.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.TextBoxFontFamily.Name = "TextBoxFontFamily";
+            this.TextBoxFontFamily.Size = new System.Drawing.Size(139, 20);
+            this.TextBoxFontFamily.TabIndex = 4;
+            this.TextBoxFontFamily.TextChanged += new System.EventHandler(this.TextBoxFontFamily_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 91);
+            this.textBox2.Location = new System.Drawing.Point(177, 95);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
+            this.textBox2.Size = new System.Drawing.Size(129, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // textBox3
+            // TextBoxFontSize
             // 
-            this.textBox3.Location = new System.Drawing.Point(338, 91);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(50, 20);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Desktop;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox4.Location = new System.Drawing.Point(46, 72);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 13);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "Font:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Desktop;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox5.Location = new System.Drawing.Point(188, 72);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 13);
-            this.textBox5.TabIndex = 8;
-            this.textBox5.Text = "Font Style:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Desktop;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox6.Location = new System.Drawing.Point(338, 72);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(50, 13);
-            this.textBox6.TabIndex = 9;
-            this.textBox6.Text = "Size:";
+            this.TextBoxFontSize.Location = new System.Drawing.Point(338, 95);
+            this.TextBoxFontSize.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.TextBoxFontSize.Name = "TextBoxFontSize";
+            this.TextBoxFontSize.Size = new System.Drawing.Size(60, 20);
+            this.TextBoxFontSize.TabIndex = 6;
+            this.TextBoxFontSize.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label1
             // 
@@ -149,7 +128,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "✕";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // label2
             // 
@@ -173,19 +152,81 @@
             this.panel1.TabIndex = 13;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(12, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Font:";
+            // 
+            // label4
+            // 
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(174, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Font Style:";
+            // 
+            // label5
+            // 
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(335, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 16);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Size:";
+            // 
+            // TextExample
+            // 
+            this.TextExample.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TextExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TextExample.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TextExample.Location = new System.Drawing.Point(274, 275);
+            this.TextExample.Name = "TextExample";
+            this.TextExample.Padding = new System.Windows.Forms.Padding(5);
+            this.TextExample.Size = new System.Drawing.Size(114, 59);
+            this.TextExample.TabIndex = 17;
+            this.TextExample.Text = "AbCdEfG";
+            // 
+            // OkeyButton
+            // 
+            this.OkeyButton.Location = new System.Drawing.Point(242, 415);
+            this.OkeyButton.Name = "OkeyButton";
+            this.OkeyButton.Size = new System.Drawing.Size(75, 23);
+            this.OkeyButton.TabIndex = 18;
+            this.OkeyButton.Text = "Ok";
+            this.OkeyButton.UseVisualStyleBackColor = true;
+            this.OkeyButton.Click += new System.EventHandler(this.OkeyButton_Click);
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.Location = new System.Drawing.Point(338, 415);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 19;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
             // FontForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(430, 470);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.OkeyButton);
+            this.Controls.Add(this.TextExample);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TextBoxFontSize);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxFontFamily);
             this.Controls.Add(this.listBoxFontSize);
             this.Controls.Add(this.listBoxFontStyle);
             this.Controls.Add(this.listBoxFontFamily);
@@ -204,15 +245,18 @@
         private System.Windows.Forms.ListBox listBoxFontFamily;
         private System.Windows.Forms.ListBox listBoxFontStyle;
         private System.Windows.Forms.ListBox listBoxFontSize;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TextBoxFontFamily;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TextBoxFontSize;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label TextExample;
+        private System.Windows.Forms.Button OkeyButton;
+        private System.Windows.Forms.Button CancelButton;
     }
 }

@@ -6,26 +6,47 @@ namespace BlackNotepad
 {
     public partial class BlackNotepad : Form
     {
-        readonly Font BoldAndItalic = new Font(Control.DefaultFont, FontStyle.Bold | FontStyle.Italic);
-        readonly Font Bold = new Font(Control.DefaultFont, FontStyle.Bold);
-        readonly Font Italic = new Font(Control.DefaultFont, FontStyle.Italic);
-        readonly Font Normal = new Font(Control.DefaultFont, FontStyle.Regular);
 
+        public static string FontFamily { get; set; }
+        public static string FontStyles { get; set;} 
+        public static int FontSize { get; set; }
+        static public FontStyle getFont(string name)
+        {
+            switch (name)
+            {
+                case "BoldAndItalic":
+                    return FontStyle.Bold | FontStyle.Italic;
+                case "Bold":
+                    return FontStyle.Bold;
+                case "Italic":
+                    return FontStyle.Italic;
+                case "Normal":
+                    return FontStyle.Regular;
+                default:
+                    return FontStyle.Regular;
+            }
+        }
+      
         public BlackNotepad()
         {
-           
+
             InitializeComponent();
+            
+            FontFamily= Properties.Settings.Default.FontFamily;
+            FontStyles = Properties.Settings.Default.FontStyle;
+            FontSize = Properties.Settings.Default.FontSize;
+            InputText.Font = new Font(new FontFamily(FontFamily), FontSize,  getFont(FontStyles));
             menuStrip1.Renderer = new MyRender();
             Icon = Properties.Resources.final;
             string[] args = Environment.GetCommandLineArgs();
-            if (args.Length >= 2) 
+            if (args.Length >= 2)
             {
-                string result=FileHandler.OpenFileText(args[1]);
+                string result = FileHandler.OpenFileText(args[1]);
                 InputText.Text = result;
             }
-            
-        }
 
+        }
+        
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -107,7 +128,7 @@ namespace BlackNotepad
             {
                 InputText.WordWrap = false;
                 wordWrapToolStripMenuItem.Checked = false;
-                
+
             }
             else
             {
@@ -120,6 +141,20 @@ namespace BlackNotepad
         {
             FontForm f = new FontForm();
             f.ShowDialog();
+        }
+
+        private void BlackNotepad_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.FontFamily=FontFamily;
+            Properties.Settings.Default.FontSize=FontSize;
+            Properties.Settings.Default.FontStyle=FontStyles;
+            Properties.Settings.Default.Save();
+
+        }
+
+        private void BlackNotepad_Activated(object sender, EventArgs e)
+        {
+            InputText.Font = new Font(new FontFamily(FontFamily), FontSize, getFont(FontStyles));
         }
     }
 }

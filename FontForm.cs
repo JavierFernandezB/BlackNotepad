@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
+using System.Configuration;
+
 
 namespace BlackNotepad
 {
@@ -15,26 +18,47 @@ namespace BlackNotepad
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        List<string> fontFamily = new List<string>();
+        int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
+        List<string> fontStyles = new List<string>() { "BoldAndItalic", "Bold", "Italic", "Normal" };
+        static string FontFamilyString = "Arial";
+        static string FontStyleString = "Normal";
+        static int FontSizeString = 14;
+
+
 
         public FontForm()
         {
-            int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
             InitializeComponent();
+
+            TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
+            setFontFamilyDefault();
+            foreach (int size in FontSize)
+            {
+                listBoxFontSize.Items.Add(size.ToString());
+            }
+            foreach (string styles in fontStyles)
+            {
+                listBoxFontStyle.Items.Add(styles);
+            }
+
+        }
+
+        void setFontFamilyDefault()
+        {
+
+            fontFamily.Clear();
             using (InstalledFontCollection col = new InstalledFontCollection())
             {
                 foreach (FontFamily fa in col.Families)
                 {
-                    
                     listBoxFontFamily.Items.Add(fa.Name);
+                    fontFamily.Add(fa.Name);
 
                 }
-                foreach (int size in FontSize)
-                {
-                    listBoxFontSize.Items.Add(size);
-                }
+
             }
         }
-
         private void button1_Click(object sender, System.EventArgs e)
         {
             this.Close();
@@ -68,18 +92,117 @@ namespace BlackNotepad
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
-        { 
+        {
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void TextBoxFontFamily_TextChanged(object sender, EventArgs e)
+        {
+            listBoxFontFamily.Items.Clear();
+
+            foreach (string str in fontFamily)
+            {
+                if (str.StartsWith(TextBoxFontFamily.Text, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    listBoxFontFamily.Items.Add(str);
+                }
+                if (str.Equals(TextBoxFontFamily.Text, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    listBoxFontFamily.SelectedItem = str;
+                }
+            }
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            listBoxFontSize.Items.Clear();
+
+            foreach (int str in FontSize)
+            {
+                if (str.ToString().StartsWith(TextBoxFontSize.Text))
+                {
+                    listBoxFontSize.Items.Add(str);
+                }
+                if (str.ToString().Equals(TextBoxFontSize.Text))
+                {
+                    listBoxFontSize.SelectedItem = str;
+                }
+            }
+        }
+
+        private void listBoxFontFamily_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            string font = (string)listBoxFontFamily.SelectedItem;
+            FontFamilyString = font;
+            TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
+        }
+
+        private void OkeyButton_Click(object sender, EventArgs e)
+        {
+            if (listBoxFontFamily.SelectedItem != null)
+            {
+                BlackNotepad.FontFamily = listBoxFontFamily.SelectedItem.ToString();
+
+            }
+            if(listBoxFontSize.SelectedItem != null)
+            {
+                BlackNotepad.FontSize = Int32.Parse(listBoxFontSize.SelectedItem.ToString());
+            }
+            if(listBoxFontStyle.SelectedItem != null)
+            {
+                BlackNotepad.FontStyles = listBoxFontStyle.SelectedItem.ToString();
+            }
+            
+            this.Close();
+            
+        }
+
+
+
+        private void listBoxFontFamily_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            TextFormatFlags flags = TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak;
+            TextRenderer.DrawText(e.Graphics, listBoxFontFamily.Items[e.Index].ToString(), new Font(listBoxFontFamily.Items[e.Index].ToString(), 8, FontStyle.Regular), e.Bounds, Color.Black, flags);
+            e.DrawFocusRectangle();
+        }
+
+        private void listBoxFontStyle_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            TextFormatFlags flags = TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak;
+            TextRenderer.DrawText(e.Graphics, listBoxFontStyle.Items[e.Index].ToString(), new Font("Arial", 8, BlackNotepad.getFont(listBoxFontStyle.Items[e.Index].ToString())), e.Bounds, Color.Black, flags);
+            e.DrawFocusRectangle();
+        }
+
+        private void listBoxFontStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string style = (string)listBoxFontStyle.SelectedItem;
+            FontStyleString = style;
+            TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
+        }
+
+        private void listBoxFontSize_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string size = (string)listBoxFontSize.SelectedItem;
+            FontSizeString = Int32.Parse(size);
+            TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

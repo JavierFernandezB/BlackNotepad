@@ -90,7 +90,7 @@ namespace BlackNotepad
             }
             else
             {
-               
+
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
                 saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
