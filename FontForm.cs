@@ -18,12 +18,12 @@ namespace BlackNotepad
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        readonly List<string> fontFamily = new List<string>();
-        readonly int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
-        readonly List<string> fontStyles = new List<string>() { "BoldAndItalic", "Bold", "Italic", "Normal" };
-        static string FontFamilyString = "Arial";
-        static string FontStyleString = "Normal";
-        static int FontSizeString = 14;
+        private readonly List<string> fontFamily = new List<string>();
+        private readonly int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
+        private readonly List<string> fontStyles = new List<string>() { "BoldAndItalic", "Bold", "Italic", "Normal" };
+        private static string FontFamilyString = "Arial";
+        private static string FontStyleString = "Normal";
+        private static int FontSizeString = 14;
 
 
 
@@ -44,7 +44,7 @@ namespace BlackNotepad
 
         }
 
-        void setFontFamilyDefault()
+        private void setFontFamilyDefault()
         {
 
             fontFamily.Clear();

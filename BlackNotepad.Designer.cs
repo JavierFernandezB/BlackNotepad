@@ -29,29 +29,39 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.NotepadTitle = new System.Windows.Forms.Label();
+            this.InputText = new System.Windows.Forms.RichTextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.FontZoom = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.MaximizeButton = new System.Windows.Forms.Button();
+            this.MinimizeButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InputText = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MinimizeButton = new System.Windows.Forms.Button();
-            this.MaximizeButton = new System.Windows.Forms.Button();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NotepadTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -61,45 +71,152 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.InputText, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.InputText, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 588);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(930, 584);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
-            // flowLayoutPanel3
+            // InputText
             // 
-            this.flowLayoutPanel3.Controls.Add(this.NotepadTitle);
-            this.flowLayoutPanel3.Controls.Add(this.menuStrip1);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(807, 74);
-            this.flowLayoutPanel3.TabIndex = 6;
-            this.flowLayoutPanel3.WrapContents = false;
+            this.InputText.BackColor = System.Drawing.SystemColors.Desktop;
+            this.tableLayoutPanel1.SetColumnSpan(this.InputText, 2);
+            this.InputText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InputText.ForeColor = System.Drawing.Color.White;
+            this.InputText.Location = new System.Drawing.Point(0, 74);
+            this.InputText.Margin = new System.Windows.Forms.Padding(0);
+            this.InputText.Name = "InputText";
+            this.InputText.Size = new System.Drawing.Size(930, 483);
+            this.InputText.TabIndex = 8;
+            this.InputText.Text = "";
+            this.InputText.SelectionChanged += new System.EventHandler(this.InputText_SelectionChanged);
+            this.InputText.TextChanged += new System.EventHandler(this.InputText_TextChanged);
             // 
-            // NotepadTitle
+            // flowLayoutPanel2
             // 
-            this.NotepadTitle.BackColor = System.Drawing.SystemColors.Desktop;
-            this.NotepadTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NotepadTitle.Image = global::BlackNotepad.Properties.Resources.Gakuseisean_Radium_Notepad_15;
-            this.NotepadTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NotepadTitle.Location = new System.Drawing.Point(3, 0);
-            this.NotepadTitle.Name = "NotepadTitle";
-            this.NotepadTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.NotepadTitle.Size = new System.Drawing.Size(823, 39);
-            this.NotepadTitle.TabIndex = 0;
-            this.NotepadTitle.Text = "        Notepad";
-            this.NotepadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NotepadTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.FontZoom);
+            this.flowLayoutPanel2.Controls.Add(this.labelCount);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 557);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(930, 27);
+            this.flowLayoutPanel2.TabIndex = 9;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(841, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "UTF-8";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // labelCount
+            // 
+            this.labelCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCount.Location = new System.Drawing.Point(647, 0);
+            this.labelCount.Margin = new System.Windows.Forms.Padding(0);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(100, 25);
+            this.labelCount.TabIndex = 1;
+            this.labelCount.Text = "Ln 1, Col 1";
+            this.labelCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCount.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // FontZoom
+            // 
+            this.FontZoom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FontZoom.Location = new System.Drawing.Point(747, 0);
+            this.FontZoom.Margin = new System.Windows.Forms.Padding(0);
+            this.FontZoom.Name = "FontZoom";
+            this.FontZoom.Size = new System.Drawing.Size(94, 25);
+            this.FontZoom.TabIndex = 2;
+            this.FontZoom.Text = "100%";
+            this.FontZoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FontZoom.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Red;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ExitButton.Location = new System.Drawing.Point(70, 0);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(35, 24);
+            this.ExitButton.TabIndex = 3;
+            this.ExitButton.Text = "✕";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // MaximizeButton
+            // 
+            this.MaximizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.MaximizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaximizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.MaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.MaximizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
+            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.MaximizeButton.Location = new System.Drawing.Point(35, 0);
+            this.MaximizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximizeButton.Name = "MaximizeButton";
+            this.MaximizeButton.Size = new System.Drawing.Size(35, 25);
+            this.MaximizeButton.TabIndex = 2;
+            this.MaximizeButton.Text = "🗖";
+            this.MaximizeButton.UseVisualStyleBackColor = false;
+            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
+            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MinimizeButton.Location = new System.Drawing.Point(0, 0);
+            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(35, 25);
+            this.MinimizeButton.TabIndex = 1;
+            this.MinimizeButton.Text = "🗕";
+            this.MinimizeButton.UseVisualStyleBackColor = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click_1);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.flowLayoutPanel1.Controls.Add(this.MinimizeButton);
+            this.flowLayoutPanel1.Controls.Add(this.MaximizeButton);
+            this.flowLayoutPanel1.Controls.Add(this.ExitButton);
+            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(825, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 74);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // menuStrip1
             // 
@@ -110,7 +227,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.formatToolStripMenuItem});
+            this.formatToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 39);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -139,7 +257,7 @@
             this.openToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -149,7 +267,7 @@
             this.newToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -158,9 +276,19 @@
             this.saveToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // newWindowToolStripMenuItem
+            // 
+            this.newWindowToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
+            this.newWindowToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.newWindowToolStripMenuItem.Text = "New Window";
+            this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.newWindowToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -168,14 +296,14 @@
             this.toolStripSeparator1.Enabled = false;
             this.toolStripSeparator1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(220, 22);
             this.toolStripSeparator1.Text = "─────────────────";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -215,117 +343,101 @@
             this.fontToolStripMenuItem.Text = "Font";
             this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
-            // InputText
+            // viewToolStripMenuItem
             // 
-            this.InputText.BackColor = System.Drawing.SystemColors.Desktop;
-            this.tableLayoutPanel1.SetColumnSpan(this.InputText, 2);
-            this.InputText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InputText.ForeColor = System.Drawing.SystemColors.Window;
-            this.InputText.Location = new System.Drawing.Point(0, 74);
-            this.InputText.Margin = new System.Windows.Forms.Padding(0);
-            this.InputText.Multiline = true;
-            this.InputText.Name = "InputText";
-            this.InputText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.InputText.Size = new System.Drawing.Size(934, 514);
-            this.InputText.TabIndex = 5;
-            this.InputText.TextChanged += new System.EventHandler(this.InputText_TextChanged);
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zoomToolStripMenuItem});
+            this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 29);
+            this.viewToolStripMenuItem.Text = "View";
             // 
-            // flowLayoutPanel1
+            // zoomToolStripMenuItem
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.flowLayoutPanel1.Controls.Add(this.MinimizeButton);
-            this.flowLayoutPanel1.Controls.Add(this.MaximizeButton);
-            this.flowLayoutPanel1.Controls.Add(this.ExitButton);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(829, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 74);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zoomInToolStripMenuItem,
+            this.zoomOutToolStripMenuItem,
+            this.restoreZoomToolStripMenuItem});
+            this.zoomToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.zoomToolStripMenuItem.Text = "Zoom";
             // 
-            // MinimizeButton
+            // zoomInToolStripMenuItem
             // 
-            this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MinimizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MinimizeButton.Location = new System.Drawing.Point(0, 0);
-            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(35, 25);
-            this.MinimizeButton.TabIndex = 1;
-            this.MinimizeButton.Text = "🗕";
-            this.MinimizeButton.UseVisualStyleBackColor = false;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click_1);
+            this.zoomInToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.zoomInToolStripMenuItem.Name = "zoomInToolStripMenuItem";
+            this.zoomInToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemplus)));
+            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.zoomInToolStripMenuItem.Text = "Zoom in";
+            this.zoomInToolStripMenuItem.Click += new System.EventHandler(this.zoomInToolStripMenuItem_Click);
             // 
-            // MaximizeButton
+            // zoomOutToolStripMenuItem
             // 
-            this.MaximizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MaximizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.MaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.MaximizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
-            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximizeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.MaximizeButton.Location = new System.Drawing.Point(35, 0);
-            this.MaximizeButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Size = new System.Drawing.Size(35, 25);
-            this.MaximizeButton.TabIndex = 2;
-            this.MaximizeButton.Text = "🗖";
-            this.MaximizeButton.UseVisualStyleBackColor = false;
-            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            this.zoomOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
+            this.zoomOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemMinus)));
+            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.zoomOutToolStripMenuItem.Text = "Zoom out";
+            this.zoomOutToolStripMenuItem.Click += new System.EventHandler(this.zoomOutToolStripMenuItem_Click);
             // 
-            // ExitButton
+            // restoreZoomToolStripMenuItem
             // 
-            this.ExitButton.BackColor = System.Drawing.Color.Red;
-            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ExitButton.Location = new System.Drawing.Point(70, 0);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(35, 24);
-            this.ExitButton.TabIndex = 3;
-            this.ExitButton.Text = "✕";
-            this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.restoreZoomToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.restoreZoomToolStripMenuItem.Name = "restoreZoomToolStripMenuItem";
+            this.restoreZoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D0)));
+            this.restoreZoomToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.restoreZoomToolStripMenuItem.Text = "Restore Zoom";
+            this.restoreZoomToolStripMenuItem.Click += new System.EventHandler(this.restoreZoomToolStripMenuItem_Click);
             // 
-            // newWindowToolStripMenuItem
+            // flowLayoutPanel3
             // 
-            this.newWindowToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.N)));
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.newWindowToolStripMenuItem.Text = "New Window";
-            this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.newWindowToolStripMenuItem_Click);
+            this.flowLayoutPanel3.Controls.Add(this.NotepadTitle);
+            this.flowLayoutPanel3.Controls.Add(this.menuStrip1);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(807, 74);
+            this.flowLayoutPanel3.TabIndex = 6;
+            this.flowLayoutPanel3.WrapContents = false;
+            // 
+            // NotepadTitle
+            // 
+            this.NotepadTitle.BackColor = System.Drawing.SystemColors.Desktop;
+            this.NotepadTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NotepadTitle.Image = global::BlackNotepad.Properties.Resources.Gakuseisean_Radium_Notepad_15;
+            this.NotepadTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotepadTitle.Location = new System.Drawing.Point(3, 0);
+            this.NotepadTitle.Name = "NotepadTitle";
+            this.NotepadTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.NotepadTitle.Size = new System.Drawing.Size(823, 39);
+            this.NotepadTitle.TabIndex = 0;
+            this.NotepadTitle.Text = "        Notepad";
+            this.NotepadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotepadTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // BlackNotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(934, 588);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
             this.Name = "BlackNotepad";
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.Text = "BlackNotepad";
             this.Activated += new System.EventHandler(this.BlackNotepad_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BlackNotepad_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -333,25 +445,34 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label NotepadTitle;
+        private System.Windows.Forms.RichTextBox InputText;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FontZoom;
+        private System.Windows.Forms.Label labelCount;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label NotepadTitle;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restoreZoomToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button MaximizeButton;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
-        private System.Windows.Forms.TextBox InputText;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
     }
 }
 

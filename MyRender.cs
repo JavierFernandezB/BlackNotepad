@@ -9,7 +9,7 @@ namespace BlackNotepad
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             base.OnRenderToolStripBorder(e);
-            e.Graphics.FillRectangle(Brushes.Black, e.ConnectedArea);
+            e.Graphics.FillRectangle(Brushes.White, e.ConnectedArea);
             e.Graphics.DrawRectangle(Pens.Black, new Rectangle(0, 1, e.AffectedBounds.Width - 2, e.AffectedBounds.Height - 3));
         }
 

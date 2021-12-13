@@ -31,7 +31,7 @@ namespace BlackNotepad
                         filename = Regex.Match(filePath, @".*\\([^\\]+$)").Groups[1].Value;
 
                         //Read the contents of the file into a stream
-                        var fileStream = openFileDialog.OpenFile();
+                        Stream fileStream = openFileDialog.OpenFile();
 
                         using (StreamReader reader = new StreamReader(fileStream))
                         {
@@ -99,11 +99,12 @@ namespace BlackNotepad
             else
             {
 
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-                saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                saveFileDialog1.FilterIndex = 2;
-                saveFileDialog1.RestoreDirectory = true;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog
+                {
+                    Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+                };
 
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {

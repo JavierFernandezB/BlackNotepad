@@ -46,7 +46,8 @@ namespace BlackNotepad
 
             }
             SetTitleName();
-
+            zoomInToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Plus";
+            zoomOutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Minus";
 
 
         }
@@ -194,6 +195,55 @@ namespace BlackNotepad
                 SetTitleName();
                 FileHandler.changed = false;
             }
+
+        }
+
+        private void zoomInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputText.ZoomFactor += .1f;
+            FontZoom.Text = (int.Parse(FontZoom.Text.ToString().Split('%')[0]) + 10).ToString() + "%";
+
+        }
+
+        private void zoomOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputText.ZoomFactor -= .1f;
+            FontZoom.Text = (int.Parse(FontZoom.Text.ToString().Split('%')[0]) - 10).ToString() + "%";
+        }
+
+        private void restoreZoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputText.ZoomFactor = 1;
+            FontZoom.Text = "100%";
+
+
+
+        }
+
+        private void label2_Paint(object sender, PaintEventArgs e)
+        {
+
+            ControlPaint.DrawBorder(e.Graphics, labelCount.DisplayRectangle, Color.Gray, ButtonBorderStyle.Solid);
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, flowLayoutPanel2.DisplayRectangle, Color.Gray, ButtonBorderStyle.Solid);
+        }
+
+        private void InputText_SelectionChanged(object sender, EventArgs e)
+        {
+            int line = InputText.GetLineFromCharIndex(InputText.SelectionStart);
+            int column = InputText.SelectionStart - InputText.GetFirstCharIndexFromLine(line);
+
+            labelCount.Text = $"Ln {line}, Col {column}";
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }
