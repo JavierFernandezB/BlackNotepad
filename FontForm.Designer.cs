@@ -43,7 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TextExample = new System.Windows.Forms.Label();
             this.OkeyButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.Cancelfont = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,15 +201,15 @@
             this.OkeyButton.UseVisualStyleBackColor = true;
             this.OkeyButton.Click += new System.EventHandler(this.OkeyButton_Click);
             // 
-            // CancelButton
+            // Cancelfont
             // 
-            this.CancelButton.Location = new System.Drawing.Point(338, 415);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 19;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.Cancelfont.Location = new System.Drawing.Point(338, 415);
+            this.Cancelfont.Name = "Cancelfont";
+            this.Cancelfont.Size = new System.Drawing.Size(75, 23);
+            this.Cancelfont.TabIndex = 19;
+            this.Cancelfont.Text = "Cancel";
+            this.Cancelfont.UseVisualStyleBackColor = true;
+            this.Cancelfont.Click += new System.EventHandler(this.Cancelfont_Click);
             // 
             // FontForm
             // 
@@ -217,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(430, 470);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.Cancelfont);
             this.Controls.Add(this.OkeyButton);
             this.Controls.Add(this.TextExample);
             this.Controls.Add(this.label5);
@@ -257,6 +257,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label TextExample;
         private System.Windows.Forms.Button OkeyButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button Cancelfont;
     }
 }

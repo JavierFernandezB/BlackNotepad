@@ -1,16 +1,20 @@
 ﻿using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 namespace BlackNotepad
 {
     internal class FileHandler
     {
-        private static string fileContent = string.Empty;
-        private static string filePath = string.Empty;
-        private static Encoding encoding = null;
+        public static string fileContent = string.Empty;
+        public static string filePath = string.Empty;
+        public static Encoding encoding = null;
+        public static string filename = "Untitled";
+        public static bool changed = false;
 
         public static string OpenFileText()
         {
+
             try
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -24,6 +28,7 @@ namespace BlackNotepad
                     {
                         //Get the path of specified file
                         filePath = openFileDialog.FileName;
+                        filename = Regex.Match(filePath, @".*\\([^\\]+$)").Groups[1].Value;
 
                         //Read the contents of the file into a stream
                         var fileStream = openFileDialog.OpenFile();
@@ -60,6 +65,7 @@ namespace BlackNotepad
                     fileContent = reader.ReadToEnd();
                     encoding = reader.CurrentEncoding;
                 }
+                filename = Regex.Match(Location, @".*\\([^\\]+$)").Groups[1].Value;
 
 
                 return fileContent;
@@ -80,7 +86,9 @@ namespace BlackNotepad
             {
                 fs = new FileStream(filePath, FileMode.OpenOrCreate);
                 if (encoding is null)
+                {
                     encoding = Encoding.UTF8;
+                }
 
                 using (StreamWriter writer = new StreamWriter(fs, encoding))
                 {
@@ -100,7 +108,10 @@ namespace BlackNotepad
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     if (encoding is null)
+                    {
                         encoding = Encoding.UTF8;
+                    }
+
                     fs = new FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate);
                     using (StreamWriter writer = new StreamWriter(fs, encoding))
                     {
@@ -111,6 +122,14 @@ namespace BlackNotepad
                 }
             }
 
+        }
+
+        public static void NewFileText()
+        {
+            fileContent = string.Empty;
+            filePath = string.Empty;
+            filename = "Untitled";
+            changed = false;
         }
     }
 }

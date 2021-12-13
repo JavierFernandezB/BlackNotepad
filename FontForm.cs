@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using System.Configuration;
 
 
 namespace BlackNotepad
@@ -18,9 +17,10 @@ namespace BlackNotepad
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        List<string> fontFamily = new List<string>();
-        int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
-        List<string> fontStyles = new List<string>() { "BoldAndItalic", "Bold", "Italic", "Normal" };
+
+        readonly List<string> fontFamily = new List<string>();
+        readonly int[] FontSize = new int[16] { 8, 9, 19, 11, 12, 14, 16, 20, 22, 24, 26, 28, 36, 48, 72, 100 };
+        readonly List<string> fontStyles = new List<string>() { "BoldAndItalic", "Bold", "Italic", "Normal" };
         static string FontFamilyString = "Arial";
         static string FontStyleString = "Normal";
         static int FontSizeString = 14;
@@ -61,7 +61,7 @@ namespace BlackNotepad
         }
         private void button1_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)
@@ -76,7 +76,7 @@ namespace BlackNotepad
         private void FontForm_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.AliceBlue, 3),
-                           this.DisplayRectangle);
+                           DisplayRectangle);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -94,6 +94,7 @@ namespace BlackNotepad
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
+            Close();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -155,17 +156,17 @@ namespace BlackNotepad
                 BlackNotepad.FontFamily = listBoxFontFamily.SelectedItem.ToString();
 
             }
-            if(listBoxFontSize.SelectedItem != null)
+            if (listBoxFontSize.SelectedItem != null)
             {
-                BlackNotepad.FontSize = Int32.Parse(listBoxFontSize.SelectedItem.ToString());
+                BlackNotepad.FontSize = int.Parse(listBoxFontSize.SelectedItem.ToString());
             }
-            if(listBoxFontStyle.SelectedItem != null)
+            if (listBoxFontStyle.SelectedItem != null)
             {
                 BlackNotepad.FontStyles = listBoxFontStyle.SelectedItem.ToString();
             }
-            
-            this.Close();
-            
+
+            Close();
+
         }
 
 
@@ -196,13 +197,14 @@ namespace BlackNotepad
         private void listBoxFontSize_SelectedValueChanged(object sender, EventArgs e)
         {
             string size = (string)listBoxFontSize.SelectedItem;
-            FontSizeString = Int32.Parse(size);
+            FontSizeString = int.Parse(size);
             TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+
+        private void Cancelfont_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
