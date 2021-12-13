@@ -29,15 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.InputText = new System.Windows.Forms.RichTextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelCount = new System.Windows.Forms.Label();
-            this.FontZoom = new System.Windows.Forms.Label();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.MaximizeButton = new System.Windows.Forms.Button();
-            this.MinimizeButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NotepadTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +48,21 @@
             this.zoomInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreZoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.NotepadTitle = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.MinimizeButton = new System.Windows.Forms.Button();
+            this.MaximizeButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.InputText = new System.Windows.Forms.RichTextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FontZoom = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,147 +77,42 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(930, 584);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(928, 582);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
-            // InputText
+            // flowLayoutPanel3
             // 
-            this.InputText.BackColor = System.Drawing.SystemColors.Desktop;
-            this.tableLayoutPanel1.SetColumnSpan(this.InputText, 2);
-            this.InputText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InputText.ForeColor = System.Drawing.Color.White;
-            this.InputText.Location = new System.Drawing.Point(0, 74);
-            this.InputText.Margin = new System.Windows.Forms.Padding(0);
-            this.InputText.Name = "InputText";
-            this.InputText.Size = new System.Drawing.Size(930, 483);
-            this.InputText.TabIndex = 8;
-            this.InputText.Text = "";
-            this.InputText.SelectionChanged += new System.EventHandler(this.InputText_SelectionChanged);
-            this.InputText.TextChanged += new System.EventHandler(this.InputText_TextChanged);
+            this.flowLayoutPanel3.Controls.Add(this.NotepadTitle);
+            this.flowLayoutPanel3.Controls.Add(this.menuStrip1);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(807, 74);
+            this.flowLayoutPanel3.TabIndex = 6;
+            this.flowLayoutPanel3.WrapContents = false;
             // 
-            // flowLayoutPanel2
+            // NotepadTitle
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Controls.Add(this.FontZoom);
-            this.flowLayoutPanel2.Controls.Add(this.labelCount);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 557);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(930, 27);
-            this.flowLayoutPanel2.TabIndex = 9;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(841, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "UTF-8";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
-            // 
-            // labelCount
-            // 
-            this.labelCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelCount.Location = new System.Drawing.Point(647, 0);
-            this.labelCount.Margin = new System.Windows.Forms.Padding(0);
-            this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(100, 25);
-            this.labelCount.TabIndex = 1;
-            this.labelCount.Text = "Ln 1, Col 1";
-            this.labelCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelCount.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
-            // 
-            // FontZoom
-            // 
-            this.FontZoom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FontZoom.Location = new System.Drawing.Point(747, 0);
-            this.FontZoom.Margin = new System.Windows.Forms.Padding(0);
-            this.FontZoom.Name = "FontZoom";
-            this.FontZoom.Size = new System.Drawing.Size(94, 25);
-            this.FontZoom.TabIndex = 2;
-            this.FontZoom.Text = "100%";
-            this.FontZoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FontZoom.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.BackColor = System.Drawing.Color.Red;
-            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ExitButton.Location = new System.Drawing.Point(70, 0);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(35, 24);
-            this.ExitButton.TabIndex = 3;
-            this.ExitButton.Text = "✕";
-            this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // MaximizeButton
-            // 
-            this.MaximizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MaximizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.MaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.MaximizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
-            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximizeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.MaximizeButton.Location = new System.Drawing.Point(35, 0);
-            this.MaximizeButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Size = new System.Drawing.Size(35, 25);
-            this.MaximizeButton.TabIndex = 2;
-            this.MaximizeButton.Text = "🗖";
-            this.MaximizeButton.UseVisualStyleBackColor = false;
-            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
-            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MinimizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
-            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
-            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MinimizeButton.Location = new System.Drawing.Point(0, 0);
-            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(35, 25);
-            this.MinimizeButton.TabIndex = 1;
-            this.MinimizeButton.Text = "🗕";
-            this.MinimizeButton.UseVisualStyleBackColor = false;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click_1);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.flowLayoutPanel1.Controls.Add(this.MinimizeButton);
-            this.flowLayoutPanel1.Controls.Add(this.MaximizeButton);
-            this.flowLayoutPanel1.Controls.Add(this.ExitButton);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(825, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 74);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.NotepadTitle.BackColor = System.Drawing.SystemColors.Desktop;
+            this.NotepadTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NotepadTitle.Image = global::BlackNotepad.Properties.Resources.Gakuseisean_Radium_Notepad_15;
+            this.NotepadTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotepadTitle.Location = new System.Drawing.Point(3, 0);
+            this.NotepadTitle.Name = "NotepadTitle";
+            this.NotepadTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.NotepadTitle.Size = new System.Drawing.Size(823, 39);
+            this.NotepadTitle.TabIndex = 0;
+            this.NotepadTitle.Text = "        Notepad";
+            this.NotepadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NotepadTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // menuStrip1
             // 
@@ -328,9 +224,10 @@
             // wordWrapToolStripMenuItem
             // 
             this.wordWrapToolStripMenuItem.BackColor = System.Drawing.SystemColors.Desktop;
+            this.wordWrapToolStripMenuItem.CheckOnClick = true;
             this.wordWrapToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
-            this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wordWrapToolStripMenuItem.Text = "Word Wrap";
             this.wordWrapToolStripMenuItem.Click += new System.EventHandler(this.wordWrapToolStripMenuItem_Click);
             // 
@@ -346,7 +243,8 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zoomToolStripMenuItem});
+            this.zoomToolStripMenuItem,
+            this.statusBarToolStripMenuItem});
             this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 29);
@@ -390,32 +288,145 @@
             this.restoreZoomToolStripMenuItem.Text = "Restore Zoom";
             this.restoreZoomToolStripMenuItem.Click += new System.EventHandler(this.restoreZoomToolStripMenuItem_Click);
             // 
-            // flowLayoutPanel3
+            // flowLayoutPanel1
             // 
-            this.flowLayoutPanel3.Controls.Add(this.NotepadTitle);
-            this.flowLayoutPanel3.Controls.Add(this.menuStrip1);
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(807, 74);
-            this.flowLayoutPanel3.TabIndex = 6;
-            this.flowLayoutPanel3.WrapContents = false;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.flowLayoutPanel1.Controls.Add(this.MinimizeButton);
+            this.flowLayoutPanel1.Controls.Add(this.MaximizeButton);
+            this.flowLayoutPanel1.Controls.Add(this.ExitButton);
+            this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(823, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 74);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
-            // NotepadTitle
+            // MinimizeButton
             // 
-            this.NotepadTitle.BackColor = System.Drawing.SystemColors.Desktop;
-            this.NotepadTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NotepadTitle.Image = global::BlackNotepad.Properties.Resources.Gakuseisean_Radium_Notepad_15;
-            this.NotepadTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NotepadTitle.Location = new System.Drawing.Point(3, 0);
-            this.NotepadTitle.Name = "NotepadTitle";
-            this.NotepadTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.NotepadTitle.Size = new System.Drawing.Size(823, 39);
-            this.NotepadTitle.TabIndex = 0;
-            this.NotepadTitle.Text = "        Notepad";
-            this.NotepadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NotepadTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
+            this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MinimizeButton.Location = new System.Drawing.Point(0, 0);
+            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(35, 25);
+            this.MinimizeButton.TabIndex = 1;
+            this.MinimizeButton.Text = "🗕";
+            this.MinimizeButton.UseVisualStyleBackColor = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click_1);
+            // 
+            // MaximizeButton
+            // 
+            this.MaximizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.MaximizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaximizeButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Desktop;
+            this.MaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.MaximizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(227)))), ((int)(((byte)(242)))));
+            this.MaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.MaximizeButton.Location = new System.Drawing.Point(35, 0);
+            this.MaximizeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximizeButton.Name = "MaximizeButton";
+            this.MaximizeButton.Size = new System.Drawing.Size(35, 25);
+            this.MaximizeButton.TabIndex = 2;
+            this.MaximizeButton.Text = "🗖";
+            this.MaximizeButton.UseVisualStyleBackColor = false;
+            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Red;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ExitButton.Location = new System.Drawing.Point(70, 0);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(35, 24);
+            this.ExitButton.TabIndex = 3;
+            this.ExitButton.Text = "✕";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // InputText
+            // 
+            this.InputText.BackColor = System.Drawing.SystemColors.Desktop;
+            this.tableLayoutPanel1.SetColumnSpan(this.InputText, 2);
+            this.InputText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InputText.ForeColor = System.Drawing.Color.White;
+            this.InputText.Location = new System.Drawing.Point(0, 74);
+            this.InputText.Margin = new System.Windows.Forms.Padding(0);
+            this.InputText.Name = "InputText";
+            this.InputText.Size = new System.Drawing.Size(928, 481);
+            this.InputText.TabIndex = 8;
+            this.InputText.Text = "";
+            this.InputText.SelectionChanged += new System.EventHandler(this.InputText_SelectionChanged);
+            this.InputText.TextChanged += new System.EventHandler(this.InputText_TextChanged);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.FontZoom);
+            this.flowLayoutPanel2.Controls.Add(this.labelCount);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 555);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(928, 27);
+            this.flowLayoutPanel2.TabIndex = 9;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(839, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "UTF-8";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // FontZoom
+            // 
+            this.FontZoom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FontZoom.Location = new System.Drawing.Point(745, 0);
+            this.FontZoom.Margin = new System.Windows.Forms.Padding(0);
+            this.FontZoom.Name = "FontZoom";
+            this.FontZoom.Size = new System.Drawing.Size(94, 25);
+            this.FontZoom.TabIndex = 2;
+            this.FontZoom.Text = "100%";
+            this.FontZoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FontZoom.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // labelCount
+            // 
+            this.labelCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCount.Location = new System.Drawing.Point(645, 0);
+            this.labelCount.Margin = new System.Windows.Forms.Padding(0);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(100, 25);
+            this.labelCount.TabIndex = 1;
+            this.labelCount.Text = "Ln 1, Col 1";
+            this.labelCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCount.Paint += new System.Windows.Forms.PaintEventHandler(this.label2_Paint);
+            // 
+            // statusBarToolStripMenuItem
+            // 
+            this.statusBarToolStripMenuItem.CheckOnClick = true;
+            this.statusBarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Text = "Status Bar";
             // 
             // BlackNotepad
             // 
@@ -425,19 +436,20 @@
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(934, 588);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BlackNotepad";
-            this.Padding = new System.Windows.Forms.Padding(2);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "BlackNotepad";
             this.Activated += new System.EventHandler(this.BlackNotepad_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BlackNotepad_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -473,6 +485,7 @@
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button MaximizeButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
     }
 }
 

@@ -6,6 +6,8 @@ namespace BlackNotepad
 {
     public partial class BlackNotepad : Form
     {
+        private const int cGrip = 16;
+
 
         public static string FontFamily { get; set; }
         public static string FontStyles { get; set; }
@@ -48,7 +50,7 @@ namespace BlackNotepad
             SetTitleName();
             zoomInToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Plus";
             zoomOutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Minus";
-
+            SetStyle(ControlStyles.ResizeRedraw, true);
 
         }
 
@@ -92,7 +94,22 @@ namespace BlackNotepad
         private void ExitButton_Click(object sender, EventArgs e)
         {
 
-            Close();
+            if (FileHandler.changed)
+            {
+                using (MessageBoxCustom form = new MessageBoxCustom(InputText.Text))
+                {
+                    form.ShowDialog();
+                    if (form.ReturnValue)
+                    {
+                        Close();
+                    }
+                }
+            }
+            else
+            {
+                Close();
+            }
+
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -241,9 +258,80 @@ namespace BlackNotepad
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        //Start resizing settings
+        private const int _ = 10;
+        private const int
+                    HTLEFT = 10,
+                    HTRIGHT = 11,
+                    HTTOP = 12,
+                    HTTOPLEFT = 13,
+                    HTTOPRIGHT = 14,
+                    HTBOTTOM = 15,
+                    HTBOTTOMLEFT = 16,
+                    HTBOTTOMRIGHT = 17;
+
+        private Rectangle TopLeft { get { return new Rectangle(0, 0, _, _); } }
+
+        private Rectangle TopRight { get { return new Rectangle(ClientSize.Width - _, 0, _, _); } }
+
+        private Rectangle BottomLeft { get { return new Rectangle(0, ClientSize.Height - _, _, _); } }
+
+        private Rectangle BottomRight { get { return new Rectangle(ClientSize.Width - _, ClientSize.Height - _, _, _); } }
+
+        private Rectangle Top { get { return new Rectangle(0, 0, ClientSize.Width, _); } }
+
+        private Rectangle Left { get { return new Rectangle(0, 0, _, ClientSize.Height); } }
+
+        private Rectangle Bottom { get { return new Rectangle(0, ClientSize.Height - _, ClientSize.Width, _); } }
+
+        private Rectangle Right { get { return new Rectangle(ClientSize.Width - _, 0, _, ClientSize.Height); } }
+
+        protected override void WndProc(ref Message message)
         {
-           
+            base.WndProc(ref message);
+
+            if (message.Msg == 0x84) // WM_NCHITTEST
+            {
+                Point cursor = PointToClient(Cursor.Position);
+
+                if (TopLeft.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTTOPLEFT;
+                }
+                else if (TopRight.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTTOPRIGHT;
+                }
+                else if (BottomLeft.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTBOTTOMLEFT;
+                }
+                else if (BottomRight.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTBOTTOMRIGHT;
+                }
+                else if (Top.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTTOP;
+                }
+                else if (Left.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTLEFT;
+                }
+                else if (Right.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTRIGHT;
+                }
+                else if (Bottom.Contains(cursor))
+                {
+                    message.Result = (IntPtr)HTBOTTOM;
+                }
+            }
         }
+
+        //End Resize
     }
+
 }
+
+
