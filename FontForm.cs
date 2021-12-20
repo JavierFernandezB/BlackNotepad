@@ -206,5 +206,12 @@ namespace BlackNotepad
         {
             Close();
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            BackColor = colorDialog1.Color;
+        }
     }
 }

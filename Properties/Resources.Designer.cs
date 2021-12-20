@@ -63,20 +63,10 @@ namespace BlackNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon final {
+        internal static System.Drawing.Icon notepad16 {
             get {
-                object obj = ResourceManager.GetObject("final", resourceCulture);
+                object obj = ResourceManager.GetObject("notepad16", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Gakuseisean_Radium_Notepad_15 {
-            get {
-                object obj = ResourceManager.GetObject("Gakuseisean-Radium-Notepad-15", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

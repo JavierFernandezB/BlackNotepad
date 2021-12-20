@@ -44,6 +44,8 @@
             this.TextExample = new System.Windows.Forms.Label();
             this.OkeyButton = new System.Windows.Forms.Button();
             this.Cancelfont = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -211,12 +213,28 @@
             this.Cancelfont.UseVisualStyleBackColor = true;
             this.Cancelfont.Click += new System.EventHandler(this.Cancelfont_Click);
             // 
+            // colorDialog1
+            // 
+            this.colorDialog1.Color = System.Drawing.Color.White;
+            this.colorDialog1.FullOpen = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(105, 320);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 24);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FontForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(430, 470);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Cancelfont);
             this.Controls.Add(this.OkeyButton);
             this.Controls.Add(this.TextExample);
@@ -258,5 +276,7 @@
         private System.Windows.Forms.Label TextExample;
         private System.Windows.Forms.Button OkeyButton;
         private System.Windows.Forms.Button Cancelfont;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button button2;
     }
 }

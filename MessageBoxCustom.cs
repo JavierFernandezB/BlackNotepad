@@ -5,12 +5,13 @@ namespace BlackNotepad
 {
     public partial class MessageBoxCustom : Form
     {
-        string FileContent;
-        public bool ReturnValue =false;
+        private readonly string FileContent;
+        public bool ReturnValue = false;
         public MessageBoxCustom(string filecontent)
         {
             InitializeComponent();
-            FileContent= filecontent;
+            FileContent = filecontent;
+            label1.Text += $" {FileHandler.filename}";
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

@@ -97,7 +97,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(3, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(374, 31);
+            this.label1.Size = new System.Drawing.Size(365, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Do you want to save the changes to ";
             // 
@@ -139,6 +139,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MessageBoxCustom";
             this.Padding = new System.Windows.Forms.Padding(2);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxCustom";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -149,7 +150,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button DontSaveButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label BlackNotepad;
