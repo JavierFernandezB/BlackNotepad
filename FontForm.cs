@@ -30,7 +30,7 @@ namespace BlackNotepad
         public FontForm()
         {
             InitializeComponent();
-
+            BackColor = BlackNotepad.BorderColor;
             TextExample.Font = new Font(new FontFamily(FontFamilyString), FontSizeString, BlackNotepad.getFont(FontStyleString));
             setFontFamilyDefault();
             foreach (int size in FontSize)
@@ -73,24 +73,6 @@ namespace BlackNotepad
             }
         }
 
-        private void FontForm_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(new Pen(Color.AliceBlue, 3),
-                           DisplayRectangle);
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            int BORDER_SIZE = 50;
-            base.OnPaint(e);
-            ControlPaint.DrawBorder(e.Graphics, ClientRectangle,
-                Color.Black, 0, ButtonBorderStyle.None,
-                Color.Black, 0, ButtonBorderStyle.None,
-                Color.Black, 0, ButtonBorderStyle.None,
-                Color.White, BORDER_SIZE, ButtonBorderStyle.Outset
-                );
-
-        }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
@@ -211,7 +193,8 @@ namespace BlackNotepad
         private void button2_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
-            BackColor = colorDialog1.Color;
+            Console.WriteLine(colorDialog1.Color.ToArgb());
+            BlackNotepad.BorderColor = Color.FromArgb(colorDialog1.Color.ToArgb());
         }
     }
 }

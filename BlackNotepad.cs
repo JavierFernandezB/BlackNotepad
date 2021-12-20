@@ -7,8 +7,6 @@ namespace BlackNotepad
 {
     public partial class BlackNotepad : Form
     {
-        private const int cGrip = 16;
-
 
         public static string FontFamily { get; set; }
         public static string FontStyles { get; set; }
@@ -33,13 +31,26 @@ namespace BlackNotepad
             }
         }
 
+
         public BlackNotepad()
         {
 
             InitializeComponent();
+
             FontFamily = Properties.Settings.Default.FontFamily;
             FontStyles = Properties.Settings.Default.FontStyle;
             FontSize = Properties.Settings.Default.FontSize;
+
+            if (!Color.FromArgb(Properties.Settings.Default.BorderColor).IsKnownColor)
+            {
+
+                BorderColor = Color.FromArgb(Properties.Settings.Default.BorderColor);
+            }
+            else
+            {
+                BorderColor = Color.DodgerBlue;
+            }
+
             InputText.Font = new Font(new FontFamily(FontFamily), FontSize, getFont(FontStyles));
             menuStrip1.Renderer = new MyRender();
             Icon = Properties.Resources.notepad16;
@@ -54,7 +65,7 @@ namespace BlackNotepad
             zoomInToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Plus";
             zoomOutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + Minus";
             SetStyle(ControlStyles.ResizeRedraw, true);
-
+            BackColor = BorderColor;
             Bitmap image = new Bitmap(Properties.Resources.notepad16.ToBitmap(), new Size(24, 24));
             NotepadTitle.Image = image;
         }
@@ -254,6 +265,7 @@ namespace BlackNotepad
             Properties.Settings.Default.FontFamily = FontFamily;
             Properties.Settings.Default.FontSize = FontSize;
             Properties.Settings.Default.FontStyle = FontStyles;
+            Properties.Settings.Default.BorderColor = BorderColor.ToArgb();
             Properties.Settings.Default.Save();
 
         }
@@ -261,6 +273,7 @@ namespace BlackNotepad
         private void BlackNotepad_Activated(object sender, EventArgs e)
         {
             InputText.Font = new Font(new FontFamily(FontFamily), FontSize, getFont(FontStyles));
+            BackColor = BorderColor;
 
         }
 

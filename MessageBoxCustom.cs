@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace BlackNotepad
 {
+
     public partial class MessageBoxCustom : Form
     {
         private readonly string FileContent;
@@ -10,8 +11,10 @@ namespace BlackNotepad
         public MessageBoxCustom(string filecontent)
         {
             InitializeComponent();
+            BackColor = BlackNotepad.BorderColor;
             FileContent = filecontent;
             label1.Text += $" {FileHandler.filename}";
+
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -32,6 +35,7 @@ namespace BlackNotepad
             ReturnValue = true;
             FileHandler.SaveFileText(FileContent);
             Close();
+
         }
 
         private void DontSaveButton_Click(object sender, EventArgs e)

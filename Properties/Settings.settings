@@ -11,5 +11,8 @@
     <Setting Name="FontFamily" Type="System.String" Scope="User">
       <Value Profile="(Default)">Arial</Value>
     </Setting>
+    <Setting Name="BorderColor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-234234</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

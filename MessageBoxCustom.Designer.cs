@@ -33,7 +33,7 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.DontSaveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BlackNotepad = new System.Windows.Forms.Label();
+            this.BlackNotepadLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.DontSaveButton);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.BlackNotepad);
+            this.panel1.Controls.Add(this.BlackNotepadLabel);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
@@ -101,16 +101,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Do you want to save the changes to ";
             // 
-            // BlackNotepad
+            // BlackNotepadLabel
             // 
-            this.BlackNotepad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BlackNotepad.Location = new System.Drawing.Point(3, 3);
-            this.BlackNotepad.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.BlackNotepad.Name = "BlackNotepad";
-            this.BlackNotepad.Size = new System.Drawing.Size(86, 23);
-            this.BlackNotepad.TabIndex = 1;
-            this.BlackNotepad.Text = "BlackNotepad";
-            this.BlackNotepad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BlackNotepadLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BlackNotepadLabel.Location = new System.Drawing.Point(3, 3);
+            this.BlackNotepadLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.BlackNotepadLabel.Name = "BlackNotepadLabel";
+            this.BlackNotepadLabel.Size = new System.Drawing.Size(86, 23);
+            this.BlackNotepadLabel.TabIndex = 1;
+            this.BlackNotepadLabel.Text = "BlackNotepad";
+            this.BlackNotepadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -153,7 +153,7 @@
         private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button DontSaveButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label BlackNotepad;
+        private System.Windows.Forms.Label BlackNotepadLabel;
         private System.Windows.Forms.Button button1;
     }
 }

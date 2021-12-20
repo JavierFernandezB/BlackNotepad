@@ -58,5 +58,17 @@ namespace BlackNotepad.Properties {
                 this["FontFamily"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-234234")]
+        public int BorderColor {
+            get {
+                return ((int)(this["BorderColor"]));
+            }
+            set {
+                this["BorderColor"] = value;
+            }
+        }
     }
 }

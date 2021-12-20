@@ -80,7 +80,7 @@ namespace BlackNotepad
         }
         public static void SaveFileText(string fileContent)
         {
-            FileStream fs = null;
+            FileStream fs;
             if (filePath != string.Empty)
 
             {
